@@ -17,7 +17,7 @@ namespace projeto4
     {
 
         bool isAlteracao = false;
-        string cs = @"server=127.0.0.1;" + "port=3307;" + "uid=root;" + "pwd=;" + "database=academico";
+        string cs = @"server=127.0.0.1;" + "uid=root;" + "pwd=;" + "database=academico";
 
         public FormProfessor()
         {
@@ -246,5 +246,9 @@ namespace projeto4
             Principal.isOpenProfessor = false;
         }
 
+        private void FormProfessor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

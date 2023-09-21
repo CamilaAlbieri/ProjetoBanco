@@ -16,7 +16,7 @@ namespace projeto4
     public partial class FormCurso : MaterialForm
     {
         bool isAlteracao = false;
-        string cs = @"server=127.0.0.1;" + "port=3307;" + "uid=root;" + "pwd=;" + "database=academico";
+        string cs = @"server=127.0.0.1;" + "uid=root;" + "pwd=;" + "database=academico";
 
         public FormCurso()
         {
@@ -209,6 +209,11 @@ namespace projeto4
         {
             Salvar();
             limpaCampos();
+        }
+
+        private void FormCurso_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenCurso = false;
         }
     }
 }

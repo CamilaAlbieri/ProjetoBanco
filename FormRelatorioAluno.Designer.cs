@@ -100,6 +100,7 @@
             this.cboEstado.IntegralHeight = false;
             this.cboEstado.ItemHeight = 43;
             this.cboEstado.Items.AddRange(new object[] {
+            "",
             "AC",
             "AL",
             "AP",
@@ -199,7 +200,7 @@
             this.cboImpressora.Name = "cboImpressora";
             this.cboImpressora.Size = new System.Drawing.Size(376, 49);
             this.cboImpressora.StartIndex = 0;
-            this.cboImpressora.TabIndex = 6;
+            this.cboImpressora.TabIndex = 0;
             // 
             // btnImprimir
             // 
@@ -209,7 +210,7 @@
             this.btnImprimir.HighEmphasis = true;
             this.btnImprimir.Icon = null;
             this.btnImprimir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnImprimir.Location = new System.Drawing.Point(151, 467);
+            this.btnImprimir.Location = new System.Drawing.Point(138, 442);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnImprimir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnImprimir.Name = "btnImprimir";
@@ -230,7 +231,7 @@
             this.btnVisualizar.HighEmphasis = true;
             this.btnVisualizar.Icon = null;
             this.btnVisualizar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnVisualizar.Location = new System.Drawing.Point(246, 467);
+            this.btnVisualizar.Location = new System.Drawing.Point(233, 442);
             this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnVisualizar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnVisualizar.Name = "btnVisualizar";
@@ -247,13 +248,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 528);
+            this.ClientSize = new System.Drawing.Size(519, 500);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.gpb3);
             this.Controls.Add(this.gpb2);
             this.Controls.Add(this.gpb1);
             this.Name = "FormRelatorioAluno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Alunos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRelatorioAluno_FormClosed);
             this.gpb1.ResumeLayout(false);

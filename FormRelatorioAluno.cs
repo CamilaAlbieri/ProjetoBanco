@@ -19,17 +19,12 @@ namespace projeto4
 {
     public partial class FormRelatorioAluno : MaterialForm
     {
-        string cs = @"server=127.0.0.1;" + "port=3307;" + "uid=root;" + "pwd=;" + "database=academico";
+        string cs = @"server=127.0.0.1;" + "uid=root;" + "pwd=;" + "database=academico";
 
         public FormRelatorioAluno()
         {
             InitializeComponent();
             CarregaImpressoras();
-        }
-
-        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MontaRelatorio()
@@ -78,7 +73,6 @@ namespace projeto4
             table.Style.BorderPen = new PdfPen(brush1, 0.75f);
             table.Style.HeaderStyle.StringFormat = new PdfStringFormat(PdfTextAlignment.Center);
             table.Style.HeaderSource = PdfHeaderSource.ColumnCaptions;
-            table.Style.HeaderSource = PdfHeaderSource.Rows;
             table.Style.ShowHeader= true;
             table.Style.HeaderStyle.BackgroundBrush = PdfBrushes.CadetBlue;
             table.DataSource = dt;
@@ -102,16 +96,15 @@ namespace projeto4
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             MontaRelatorio();
-            var p = new Process();
-            p.StartInfo = new ProcessStartInfo(@"RelatorioAlunos.pdf")
-            {
-                UseShellExecute = true,
-                Verb = "print",
-                CreateNoWindow = true,
-                WindowStyle = ProcessWindowStyle.Hidden,
-                Arguments = "\"" + cboImpressora.Text + "\""
-            };
-            p.Start();
+            string impressora = cboImpressora.Text;
+            if (String.IsNullOrEmpty(impressora)) return;
+
+            PdfDocument doc = new PdfDocument();
+
+            doc.LoadFromFile(@"RelatorioAlunos.pdf");
+            doc.PrintSettings.PrinterName = impressora;
+            doc.Print();        
+
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
